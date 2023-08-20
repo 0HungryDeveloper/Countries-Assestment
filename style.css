@@ -1,0 +1,85 @@
+:root {
+  --color-primary: #242424;
+  --white: #f7f8fc;
+  --green: #8aa43c;
+  --green-dark: #586927;
+  --font-family: 'Arial', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-primary);
+}
+
+h1,
+th,
+td,
+p,
+label {
+  color: var(--white);
+  font-family: var(--font-family);
+}
+
+.container {
+  width: min(100% - 2rem, 1200px);
+  margin-inline: auto;
+  margin-top: 2rem;
+}
+
+.header__title {
+  margin-bottom: 1rem;
+}
+
+.header__about {
+  opacity: 0.7;
+  margin-bottom: 1rem;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1.4rem 0;
+}
+
+.navbar__pagination {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.navbar__filters {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar__filters__select {
+  background-color: var(--color-primary);
+  color: var(--white);
+  border: 1px var(--white) solid;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+.btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  background-color: var(--green);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: var(--green-dark);
+}
+
+.countries {
+  width: 100%;
+}

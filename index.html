@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="node_modules/tingle.js/dist/tingle.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Countries 🌎</title>
+</head>
+
+<body>
+  <main class="container">
+    <header class="header">
+      <h1 class="header__title">Countries API 🌎</h1>
+      <p class="header__about">Frontend JavaScript Junior Assestment</p>
+    </header>
+    <nav class="navbar">
+      <button class="navbar__order btn" id="toggle">Descending Mode</button>
+      <section class="navbar__filters">
+        <select class="navbar__filters__select" name="filters" id="filters">
+          <option value="All">All</option>
+          <option value="Official Name">Official Name</option>
+          <option value="Capital">Capital</option>
+          <option value="Region">Region</option>
+          <option value="Language">Language</option>
+        </select>
+        <label for="search">Search</label>
+        <input type="text" name="search" id="search">
+      </section>
+      <section class="navbar__pagination">
+        <button class="btn" id="previous">Previous</button>
+        <button class="btn" id="next">Next</button>
+      </section>
+    </nav>
+    <table class="countries" border="1">
+      <thead>
+        <tr>
+          <th>Official Name</th>
+          <th>Capital</th>
+          <th>Region</th>
+          <th>Language</th>
+          <th>Population</th>
+          <th>Flag</th>
+        </tr>
+      </thead>
+      <tbody id="countries">
+      </tbody>
+    </table>
+  </main>
+  <script src="node_modules/tingle.js/dist/tingle.min.js"></script>
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>
