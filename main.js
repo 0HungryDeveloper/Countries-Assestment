@@ -1,6 +1,7 @@
 'use-strict';
 
 import utils from './utils.js';
+import modal from './modal.js';
 
 // * Table content
 const countriesTable = document.querySelector('#countries');
@@ -53,20 +54,22 @@ function createTable(countries) {
       flag
     } = country;
 
-    row.addEventListener('click', async () => {
-      const sumary = await fetchSumaryCountry(countryName);
-      utils.modal.setContent(
-        `<h1>${countryName}</h1><br>${sumary.extract_html}`
-      );
-      utils.modal.open();
-    });
-
     row.appendChild(createCell(countryName));
     row.appendChild(createCell(utils.getCapital(capital)));
     row.appendChild(createCell(region));
     row.appendChild(createCell(utils.getLanguage(languages)));
     row.appendChild(createCell(population));
     row.appendChild(createCell(flag));
+
+    row.addEventListener('click', async () => {
+      const sumary = await fetchSumaryCountry(countryName);
+      modal.openModal();
+      modal.country.textContent = countryName;
+      modal.countryContent.textContent = sumary.extract;
+    });
+
+    modal.btnCloseModal.addEventListener('click', modal.closeModal);
+    modal.overlay.addEventListener('click', modal.closeModal);
 
     countriesTable.appendChild(row);
   });
