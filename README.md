@@ -22,4 +22,3 @@ Notably, users can access more country information by clicking on rows, utilizin
 - JavaScript
 - HTML
 - CSS
-- [Tingle.js](https://tingle.robinparisi.com/)
