@@ -19,30 +19,30 @@ let currentPage = 1;
 let startIndex = 0;
 let endIndex = 10;
 
-function controlPagination(currentPage) {
+const controlPagination = currentPage => {
   startIndex = (currentPage - 1) * itemsPerPage;
   endIndex = startIndex + itemsPerPage;
-}
+};
 
-async function fetchCountries() {
+const fetchCountries = async () => {
   const response = await fetch(`https://restcountries.com/v3.1/all`);
   return await response.json();
-}
+};
 
-async function fetchSumaryCountry(country) {
+const fetchSummaryCountry = async country => {
   const response = await fetch(
     `https://en.wikipedia.org/api/rest_v1/page/summary/${country}`
   );
   return await response.json();
-}
+};
 
-function createCell(countryData) {
+const createCell = countryData => {
   const cell = document.createElement('td');
   cell.textContent = countryData;
   return cell;
-}
+};
 
-function createTable(countries) {
+const createTable = countries => {
   countries.map(country => {
     const row = document.createElement('tr');
     const {
@@ -62,7 +62,7 @@ function createTable(countries) {
     row.appendChild(createCell(flag));
 
     row.addEventListener('click', async () => {
-      const sumary = await fetchSumaryCountry(countryName);
+      const sumary = await fetchSummaryCountry(countryName);
       modal.openModal();
       modal.country.textContent = countryName;
       modal.countryContent.textContent = sumary.extract;
@@ -73,15 +73,15 @@ function createTable(countries) {
 
     countriesTable.appendChild(row);
   });
-}
+};
 
-function updateTable(countries) {
+const updateTable = countries => {
   while (countriesTable.firstChild) {
     countriesTable.removeChild(countriesTable.firstChild);
   }
 
   createTable(countries);
-}
+};
 
 window.addEventListener('DOMContentLoaded', async () => {
   const countries = await fetchCountries();
