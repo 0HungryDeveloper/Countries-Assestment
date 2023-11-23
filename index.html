@@ -16,16 +16,9 @@
     </header>
     <nav class="navbar">
       <button class="navbar__order btn" id="toggle">Descending Mode</button>
-      <section class="navbar__filters">
-        <select class="navbar__filters__select" name="filters" id="filters">
-          <option value="All">All</option>
-          <option value="Official Name">Official Name</option>
-          <option value="Capital">Capital</option>
-          <option value="Region">Region</option>
-          <option value="Language">Language</option>
-        </select>
-        <label for="search">Search</label>
-        <input type="text" name="search" id="search">
+      <section class="navbar__searchbar">
+        <label for="search" class="navbar__searchbar__label">Search</label>
+        <input type="text" class="navbar__searchbar__input" name="search" id="search" placeholder="Korea...">
       </section>
       <section class="navbar__pagination">
         <button class="btn" id="previous">Previous</button>

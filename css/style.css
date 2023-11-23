@@ -52,10 +52,20 @@ label {
   gap: 0.5rem;
 }
 
-.navbar__filters {
+.navbar__searchbar {
   display: flex;
+  gap: 1rem;
   align-items: center;
-  gap: 0.5rem;
+}
+
+.navbar__searchbar__label {
+  font-size: 1rem;
+}
+
+.navbar__searchbar__input {
+  height: 30px;
+  width: 360px;
+  padding: 8px;
 }
 
 .navbar__filters__select {

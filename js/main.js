@@ -19,6 +19,9 @@ let currentPage = 1;
 let startIndex = 0;
 let endIndex = 10;
 
+// * Search field
+const searchBar = document.querySelector('#search');
+
 const controlPagination = currentPage => {
   startIndex = (currentPage - 1) * itemsPerPage;
   endIndex = startIndex + itemsPerPage;
@@ -118,5 +121,13 @@ window.addEventListener('DOMContentLoaded', async () => {
       controlPagination(currentPage);
       updateTable(countries.slice(startIndex, endIndex));
     }
+  });
+
+  searchBar.addEventListener('keyup', () => {
+    const result = countries.filter(country =>
+      country.name.official.includes(searchBar.value)
+    );
+
+    updateTable(result.slice(startIndex, endIndex));
   });
 });
